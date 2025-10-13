@@ -13,18 +13,13 @@
 
     <!-- Content -->
     <div class="relative z-10 text-center text-white px-6">
-      <!-- Logo with background + shadow -->
-      <div class="inline-block bg-white/80 p-4 rounded-full mb-8">
-        <img src="{% static 'images/logo.png' %}" alt="MALU Logo" class="h-28 md:h-40 w-auto drop-shadow-2xl" />
-      </div>
-
       <h1 class="text-4xl md:text-6xl font-bold tracking-wide uppercase">Frühstück · Bowls · Kaffee</h1>
 
       <p class="mt-4 text-lg md:text-xl max-w-xl mx-auto">Alexanderstraße 1 · Berlin</p>
 
       <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#reservierung" class="px-8 py-3 bg-brandgreen text-white font-semibold uppercase rounded-md hover:bg-brandbrown transition-colors duration-300">Reservieren</a>
-        <a href="#speisekarte" class="px-8 py-3 bg-white text-brandgreen font-semibold uppercase rounded-md hover:bg-gray-100 transition-colors duration-300">Speisekarte</a>
+        <a href="#reserve" class="px-8 py-3 bg-brandgreen text-white font-semibold uppercase rounded-md hover:bg-brandbrown hover:shadow-lg transition-colors duration-300">Reservieren</a>
+        <a href="{% url 'base:menu' %}" class="px-8 py-3 bg-white text-brandgreen font-semibold uppercase rounded-md hover:bg-gray-100 hover:shadow-lg transition-colors duration-300">Speisekarte</a>
       </div>
     </div>
   </section>
@@ -90,4 +85,205 @@
       </div>
     </div>
   </section>
+
+  <section class="bg-beige px-6 py-16" id="philosophy">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+      <!-- Text Left -->
+      <div class="lg:w-1/2">
+        <h2 class="text-4xl font-bold text-brandbrown mb-6">Unsere Werte</h2>
+        <p class="text-lg leading-relaxed text-brandbrown space-y-4">
+          <span class="block">Bei uns ist jedes Gericht ein kleines Versprechen: <span class="italic text-brandgreen">hausgemacht, frisch und mit Liebe zubereitet.</span></span>
+          <span class="block">Wir glauben an ehrliche Zutaten, regionale Produkte und Rezepte, die mit Herz entstehen. Unsere Küche verzichtet auf künstliche Zusätze und setzt stattdessen auf Geschmack, Qualität und Saisonalität.</span>
+          <span class="block">Ob Frühstück, Bowl oder süße Versuchung – bei uns findest du keine Massenware, sondern echte Handarbeit. Denn gutes Essen beginnt mit guten Entscheidungen.</span>
+        </p>
+      </div>
+
+      <!-- Image Right -->
+      <div class="lg:w-1/2 w-full overflow-hidden rounded-xl flex justify-center items-center">
+        <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Unsere Küche" class="w-full max-w-md aspect-square object-cover rounded-lg" />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-beige px-6 py-16" id="gallery">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-brandbrown mb-12 text-center">Gallerie</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10">
+        <div class="aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Gallery Image 1" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Gallery Image 2" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Gallery Image 3" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Gallery Image 4" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Gallery Image 5" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Gallery Image 6" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Gallery Image 7" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Gallery Image 8" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reserve" class="bg-beige px-6 py-20">
+    <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-10">
+      <h2 class="text-4xl font-bold text-brandbrown mb-8 text-center">Reservierung</h2>
+
+      {% if success %}
+        <p class="text-green-600 text-center mb-6">Vielen Dank! Deine Reservierung wurde erfolgreich gesendet.</p>
+      {% elif error %}
+        <p class="text-red-600 text-center mb-6">Bitte überprüfe deine Eingaben und versuche es erneut.</p>
+      {% endif %}
+
+      <form method="post" class="space-y-6">
+        {% csrf_token %}
+
+        <!-- Name -->
+        <div>
+          <label for="id_name" class="block text-brandbrown font-semibold mb-2">Name</label>
+          <input type="text" name="name" id="id_name" value="{{ form.name.value|default_if_none:'' }}"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen">
+          {% if form.name.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ form.name.errors.0 }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="id_email" class="block text-brandbrown font-semibold mb-2">Email</label>
+          <input type="email" name="email" id="id_email" value="{{ form.email.value|default_if_none:'' }}"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen">
+          {% if form.email.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ form.email.errors.0 }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label for="id_phone" class="block text-brandbrown font-semibold mb-2">Telefon</label>
+          <input type="text" name="phone" id="id_phone" value="{{ form.phone.value|default_if_none:'' }}"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen">
+          {% if form.phone.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ form.phone.errors.0 }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Date -->
+        <div>
+          <label for="id_date" class="block text-brandbrown font-semibold mb-2">Datum</label>
+          <input type="date" name="date" id="id_date" value="{{ form.date.value|default_if_none:'' }}"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen">
+          {% if form.date.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ form.date.errors.0 }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Time -->
+        <div>
+          <label for="id_time" class="block text-brandbrown font-semibold mb-2">Uhrzeit</label>
+          <select name="time" id="id_time"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen">
+            {% for time in time_choices %}
+              <option value="{{ time }}" {% if form.time.value == time %}selected{% endif %}>{{ time }}</option>
+            {% endfor %}
+          </select>
+          {% if form.time.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ form.time.errors.0 }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Guests -->
+        <div>
+          <label for="id_guests" class="block text-brandbrown font-semibold mb-2">Personen</label>
+          <input type="number" name="guests" id="id_guests" value="{{ form.guests.value|default_if_none:'' }}"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen">
+          {% if form.guests.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ form.guests.errors.0 }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="id_message" class="block text-brandbrown font-semibold mb-2">Nachricht</label>
+          <textarea name="message" id="id_message" rows="4"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen">{{ form.message.value|default_if_none:'' }}</textarea>
+          {% if form.message.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ form.message.errors.0 }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Submit -->
+        <button type="submit"
+                class="w-full bg-brandgreen text-white py-3 rounded-lg hover:bg-green-700 transition">Jetzt reservieren</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-beige px-6 py-20">
+  <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-10">
+    <h2 class="text-4xl font-bold text-brandbrown mb-8 text-center">Kontakt</h2>
+
+    {% if contact_success %}
+      <p class="text-green-600 text-center mb-6">Vielen Dank für deine Nachricht! Wir melden uns bald.</p>
+    {% elif contact_error %}
+      <p class="text-red-600 text-center mb-6">Bitte überprüfe deine Eingaben und versuche es erneut.</p>
+    {% endif %}
+
+    <form method="post" class="space-y-6">
+      {% csrf_token %}
+
+      <!-- Name -->
+      <div>
+        <label for="id_name" class="block text-brandbrown font-semibold mb-2">Name</label>
+        <input type="text" name="name" id="id_name"
+               value="{{ contact_form.name.value|default_if_none:'' }}"
+               class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen"
+               placeholder="Dein Name">
+        {% if contact_form.name.errors %}
+          <p class="text-red-500 text-sm mt-1">{{ contact_form.name.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="id_email" class="block text-brandbrown font-semibold mb-2">E-Mail</label>
+        <input type="email" name="email" id="id_email"
+               value="{{ contact_form.email.value|default_if_none:'' }}"
+               class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen"
+               placeholder="Deine E-Mail">
+        {% if contact_form.email.errors %}
+          <p class="text-red-500 text-sm mt-1">{{ contact_form.email.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label for="id_message" class="block text-brandbrown font-semibold mb-2">Nachricht</label>
+        <textarea name="message" id="id_message" rows="5"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brandgreen"
+                  placeholder="Deine Nachricht">{{ contact_form.message.value|default_if_none:'' }}</textarea>
+        {% if contact_form.message.errors %}
+          <p class="text-red-500 text-sm mt-1">{{ contact_form.message.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <!-- Submit -->
+      <button type="submit"
+              class="w-full bg-brandgreen text-white py-3 rounded-lg hover:bg-green-700 transition">Absenden</button>
+    </form>
+  </div>
+</section>
 {% endblock %}

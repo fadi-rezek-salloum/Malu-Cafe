@@ -1,16 +1,16 @@
 {% load static %}
 
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-  <nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-2 md:py-5">
     <!-- Logo -->
     <a href="{% url 'base:index' %}" class="flex items-center"><img src="{% static 'images/logo.png' %}" alt="MALU Logo" class="h-26 w-auto" /></a>
 
     <!-- Desktop Navigation -->
     <div class="hidden md:flex items-center space-x-12 text-lg font-bold text-brandgreen uppercase">
-      <a href="#" class="nav-link">Speisekarte</a>
-      <a href="#" class="nav-link">Galerie</a>
-      <a href="#" class="nav-link">Reservierung</a>
-      <a href="#" class="nav-link">Kontakt</a>
+      <a href="{% url 'base:menu' %}" class="nav-link">Speisekarte</a>
+      <a href="#gallery" class="nav-link">Galerie</a>
+      <a href="#reserve" class="nav-link">Reservierung</a>
+      <a href="#contact" class="nav-link">Kontakt</a>
     </div>
 
     <!-- Mobile Menu Button -->
@@ -27,10 +27,10 @@
   <div id="mobile-panel" class="absolute top-0 left-0 right-0 bg-white h-full transform translate-y-[-20px] opacity-0 transition-all duration-500 ease-in-out flex flex-col items-center justify-center space-y-10">
     <!-- Links only -->
     <nav class="flex flex-col space-y-6 text-brandgreen text-2xl font-bold uppercase text-center">
-      <a href="#" class="hover:text-brandbrown transition-colors duration-200">Speisekarte</a>
-      <a href="#" class="hover:text-brandbrown transition-colors duration-200">Galerie</a>
-      <a href="#" class="hover:text-brandbrown transition-colors duration-200">Reservierung</a>
-      <a href="#" class="hover:text-brandbrown transition-colors duration-200">Kontakt</a>
+      <a href="#menu" class="nav-link hover:text-brandbrown transition-colors duration-400">Speisekarte</a>
+      <a href="#gallery" class="nav-link hover:text-brandbrown transition-colors duration-400">Galerie</a>
+      <a href="#reserve" class="nav-link hover:text-brandbrown transition-colors duration-400">Reservierung</a>
+      <a href="#contact" class="nav-link hover:text-brandbrown transition-colors duration-400">Kontakt</a>
     </nav>
 
     <!-- Close Button -->

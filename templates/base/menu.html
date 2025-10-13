@@ -1,0 +1,127 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="bg-beige px-6 py-16">
+    <div class="max-w-4xl mx-auto space-y-12">
+      <!-- Card Template -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out px-8 py-10">
+        <h2 class="text-3xl font-bold text-brandbrown mb-6">Frühstück / Breakfast</h2>
+        <ul class="space-y-6 text-lg leading-relaxed">
+          <li>
+            <span class="text-brandbrown">Rührei: Natur 7,50 · Veggies + Käse 9,50 · Lachs 10,50 · Tomate + Sucuk 10,50</span><br />
+            <span class="text-brandgreen italic">Scrambled Eggs: Plain 7,50 · Veggies + Cheese 9,50 · Salmon 10,50 · Tomato + Sucuk 10,50</span>
+          </li>
+          <li>
+            <span class="text-brandbrown">Bagel Breakfast: Avocado & Tomate 12,50 · Lachs 12,50 · Vegan & Avocado 11,50</span><br />
+            <span class="text-brandgreen italic">Bagel Breakfast: Avocado & Tomato 12,50 · Salmon 12,50 · Vegan & Avocado 11,50</span>
+          </li>
+          <li>
+            <span class="text-brandbrown">Avocado Brot: Burrata & getrocknete Tomaten 14,00 · Rührei & Käse 14,50 · Vegan & Veggies 12,50</span><br />
+            <span class="text-brandgreen italic">Avocado Bread: Burrata & Sun-dried Tomatoes 14,00 · Scrambled Eggs & Cheese 14,50 · Vegan & Veggies 12,50</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Repeat this card structure for each section -->
+      <!-- Bowls -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out px-8 py-10">
+        <h2 class="text-3xl font-bold text-brandbrown mb-6">Bowls & Herzhaftes</h2>
+        <div class="space-y-4 text-lg leading-relaxed">
+          <p class="text-brandbrown">Basis: Salat-Mix, Bulgur, Kichererbsen, Karotten, Grilled Veggies, Mango, Rote Beete, Tomaten, Avocado, Hummus</p>
+          <p class="text-brandgreen italic">Base: Salad Mix, Bulgur, Chickpeas, Carrots, Grilled Veggies, Mango, Beetroot, Tomatoes, Avocado, Hummus</p>
+          <p class="text-brandbrown">Toppings: Falafel, Räucher Lachs, Burrata, Chicken Popcorn, Halloumi</p>
+          <p class="text-brandgreen italic">Available Toppings: Falafel, Smoked Salmon, Burrata, Chicken Popcorn, Halloumi</p>
+          <p class="text-brandbrown">Dressings: Mango-Curry, Balsamico, Tahini-Lemon, Honig-Senf</p>
+          <p class="text-brandgreen italic">Available Dressings: Mango-Curry, Balsamic, Tahini-Lemon, Honey-Mustard</p>
+        </div>
+      </div>
+
+      <!-- Manti & Soups -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out px-8 py-10">
+        <h2 class="text-3xl font-bold text-brandbrown mb-6">Manti & Suppe</h2>
+        <ul class="space-y-6 text-lg leading-relaxed">
+          <li>
+            <span class="text-brandbrown">Manti Classic: Teigtaschen gefüllt mit Hackfleisch 7,50</span><br />
+            <span class="text-brandgreen italic">Dumplings filled with minced meat 7,50</span>
+          </li>
+          <li>
+            <span class="text-brandbrown">Manti Vegan: Teigtaschen gefüllt mit Kartoffeln 8,50</span><br />
+            <span class="text-brandgreen italic">Dumplings filled with potatoes 8,50</span>
+          </li>
+          <li>
+            <span class="text-brandbrown">Tagesuppe Suppe des Tages 5,50</span><br />
+            <span class="text-brandgreen italic">Soup of the Day 5,50</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sweet Treats -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out px-8 py-10">
+        <h2 class="text-3xl font-bold text-brandbrown mb-6">Süßes / Sweet Treats</h2>
+        <ul class="space-y-6 text-lg leading-relaxed">
+          <li>
+            <span class="text-brandbrown">French Toast: Hausgemachter Kompott, Joghurt, Granola & Obst oder Joghurt, Banane, Nüsse & Schokoladensauce 12,50</span><br />
+            <span class="text-brandgreen italic">French Toast: Homemade compote, yogurt, granola & fruits or yogurt, banana, nuts & chocolate sauce</span>
+          </li>
+          <li>
+            <span class="text-brandbrown">French Kiss: Croissant, Joghurt mit Granola & Früchten, Butter, hausgemachter Kompott & Obstgarnitur 6,50</span><br />
+            <span class="text-brandgreen italic">French Kiss: Croissant, yogurt with granola & fruits, butter, homemade compote & fruit garnish 6,50</span>
+          </li>
+          <li>
+            <span class="text-brandbrown">Joghurt Bowl: Joghurt, Fruchtkompott, Granola, Nüsse & Früchte 7,90 · Vegan 8,50</span><br />
+            <span class="text-brandgreen italic">Yogurt Bowl: Yogurt, fruit compote, granola, nuts & fruits 7,90 · Vegan 8,50</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coffee -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out px-8 py-10">
+        <h2 class="text-3xl font-bold text-brandbrown mb-6">Kaffee / Coffee</h2>
+        <ul class="space-y-3 text-lg leading-relaxed text-brandbrown">
+          <li>Espresso 1,90</li>
+          <li>Espresso Macchiato 2,30</li>
+          <li>Americano 3,00 / 3,20</li>
+          <li>Cappuccino 3,50</li>
+          <li>Milchkaffee 3,90</li>
+          <li>Flat White 3,90</li>
+          <li>Latte Macchiato 4,20 / 4,50</li>
+        </ul>
+      </div>
+
+      <!-- Smoothies & Matcha -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out px-8 py-10">
+        <h2 class="text-3xl font-bold text-brandbrown mb-6">Smoothies & Matcha</h2>
+        <ul class="space-y-3 text-lg leading-relaxed text-brandbrown">
+          <li>Milky Strawberry 6,50</li>
+          <li>Vanilla Dream 6,50</li>
+          <li>Dancing Berries 6,50</li>
+          <li>Ginger Ninja 6,50</li>
+          <li>Green Matcha 4,00 / 4,50</li>
+          <li>Pink Matcha 4,00 / 4,50</li>
+          <li>Mango Matcha 5,90</li>
+          <li>Strawberry Matcha 5,90</li>
+        </ul>
+      </div>
+
+      <!-- Juices -->
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out px-8 py-10">
+        <h2 class="text-3xl font-bold text-brandbrown mb-6">Säfte / Juices</h2>
+        <ul class="space-y-6 text-lg leading-relaxed">
+          <li>
+            <span class="text-brandbrown">Apfel / Orange / Maracuja / Ananas / Banane / Kirsch / Mango 3,80</span><br />
+            <span class="text-brandgreen italic">Apple / Orange / Passion Fruit / Pineapple / Banana / Cherry / Mango 3,80</span>
+          </li>
+          <li>
+            <span class="text-brandbrown">Frische Säfte: Orangensaft / Apfelsaft 5,90 · Apfel-Karotte-Orange-Ingwer 6,50</span><br />
+            <span class="text-brandgreen italic">Fresh Juices: Orange / Apple 5,90 · Apple-Carrot-Orange-Ginger 6,50</span>
+          </li>
+          <li>
+            <span class="text-brandbrown">Hausgemachter Eistee 5,50</span><br />
+            <span class="text-brandgreen italic">Homemade Ice Tea 5,50</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endblock %}
